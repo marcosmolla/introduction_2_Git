@@ -170,7 +170,42 @@ All files that are in the category 'Changes to be committed' are staged and read
 ```
 $ git status --short ```
 
-You want to know more about what changed in your files? Use: ```git diff```to get a detailed list of all the changes. 
+You want to know more about what changed in your files? Use: ```git diff```to get a detailed list of all the changes.
+
+
+### Committing Your Changes
+We created a file (which was untracke), added it to the next commit (it is now tracked and staged), and now we will commit it using
+```
+$ git commit```
+The text editor will open and ask you for commit comment (as above). After entering a comment, saving and closing the editor the commit is completed.
+
+To avoid the text editor you can also directly provide the commit message to the commit function:
+```
+git commit -m "Initial commit"```
+
+Remember that the commit records the snapshot you set up in your staging area. Anything you didn’t stage is still sitting there modified; you can do another commit to add it to your history. Every time you perform a commit, you’re recording a snapshot of your project that you can revert to or compare to later.
+
+By the way, if you feel like the staging part is to cumbersome: by adding the -a option to the git commit command Git automatically stages every file that is already tracked before doing the commit, letting you skip the git add part.
+
+And one more thing. Should you have staged a file accidentally you can unstage it with the --cached option:
+```
+$ git rm --cached README```
+This will remove the README file from the staging area and make the file untracked.
+
+
+### Adding Remote Repositories
+How to add remote repositories? To add a new remote Git repository as a shortname you can reference easily, run:
+```
+$git remote add [shortname] [url]
+
+$ git remote
+origin
+$ git remote add pb https://github.com/paulboone/ticgit
+$ git remote -v
+```
+
+
+
 
 
 More guides:
