@@ -14,7 +14,7 @@ xcode-select --install
 Install git using the terminal:
 
 ```
-$ sudo apt-get install git
+sudo apt-get install git
 ```
 
 **Windows**
@@ -43,8 +43,8 @@ to see a list of options to use.
 These will show up in all commits you make and thus  identify changes made by you.
 
 ```
-$ git config --global user.name "Job Done"
-$ git config --global user.email jobdone@example.com
+git config --global user.name "Job Done"
+git config --global user.email jobdone@example.com
 ```
 
 You can use `git config --list` to get a list of all stored configurations.
@@ -66,13 +66,13 @@ After you created an account you might first want to create an SSH key, which wi
 List the files in your .ssh directory, if they exist
 
 ```
-$ ls -al ~/.ssh
+ls -al ~/.ssh
 ```
 
 Create a new ssh key, using the provided email as a label
 
 ```
-$ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 Generating public/private rsa key pair.
 ```
 
@@ -131,8 +131,8 @@ You can get a Git project using two main approaches. The first takes an existing
 ## Initializing a Repository in an Existing Directory
 
 ```
-$ cd ~/PATH/TO/GIT/FOLDER/introduction_2_Git/
-$ git init
+cd ~/PATH/TO/GIT/FOLDER/introduction_2_Git/
+git init
 ```
 
 This will create a ./git subdirectory that holds important files regarding your repository.
@@ -140,15 +140,15 @@ This will create a ./git subdirectory that holds important files regarding your 
 Now let's add some files to be tracked with our version control, and add a comment:
 
 ```
-$ git add UsingGit.md
-$ git commit -m 'adding text'
+git add UsingGit.md
+git commit -m 'adding text'
 ```
 
 Before we proceed, here is how you can _clone_ an exisiting repository form GitHub (for example form the flsrgroup) to your computer.
 
 ```
-$ cd ~/PATH/TO/WHERE/YOU/WANT/TO/STORE/IT
-$ git clone https://github.com/flsrgroup/dplyr
+cd ~/PATH/TO/WHERE/YOU/WANT/TO/STORE/IT
+git clone https://github.com/flsrgroup/dplyr
 ```
 
 which uses **HTTPS**, or use the following to connect via **SSH**
@@ -163,20 +163,20 @@ Each file in your working directory can be in one of two states: tracked or untr
 Let's make changes to a file in our repository and see what happens
 
 ```
-$ git status
+git status
 ```
 
 If you add a file, it will appear as untracked, like so:
 
 ```
-$ echo 'My Project' > README
-$ git status
+echo 'My Project' > README
+git status
 ```
 
 If you want to add this new file simply use:
 
 ```
-$ git add README
+git add README
 ```
 
 Should you want to add a directory instead of a single file simply provide the path to `add` and it will add the files recursively. The `add` command is multi-purpose and can be envisioned as 'add to the next commit' instead of 'add to the project'. Remember, if you modify a file after you run `git add`, you have to run it again to stage the latest version of the file.
@@ -184,7 +184,7 @@ Should you want to add a directory instead of a single file simply provide the p
 All files that are in the category 'Changes to be committed' are staged and ready to go.
 
 ```
-$ git status --short
+git status --short
 ```
 
 You want to know more about what changed in your files? Use: `git diff`to get a detailed list of all the changes.
@@ -193,7 +193,7 @@ You want to know more about what changed in your files? Use: `git diff`to get a 
 We created a file (which was untracke), added it to the next commit (it is now tracked and staged), and now we will commit it using
 
 ```
-$ git commit
+git commit
 ```
 
 The text editor will open and ask you for commit comment (as above). After entering a comment, saving and closing the editor the commit is completed.
@@ -211,7 +211,7 @@ By the way, if you feel like the staging part is to cumbersome: by adding the -a
 And one more thing. Should you have staged a file accidentally you can unstage it with the --cached option:
 
 ```
-$ git rm --cached README
+git rm --cached README
 ```
 
 This will remove the README file from the staging area and make the file untracked.
@@ -220,14 +220,13 @@ This will remove the README file from the staging area and make the file untrack
 How to add remote repositories? To add a new remote Git repository as a shortname you can reference easily, run:
 
 ```
-$git remote add [shortname] [url]
+git remote add [shortname] [url]
 
-$ git remote
+git remote
 origin
-$ git remote add pb https://github.com/paulboone/ticgit
-$ git remote -v
+git remote add pb https://github.com/paulboone/ticgit
+git remote -v
 ```
 
 More guides:
 - [Beginners setup guide](http://burnedpixel.com/blog/setting-up-git-and-github-on-your-mac/)
-- *
