@@ -123,7 +123,21 @@ You can get a Git project using two main approaches. The first takes an existing
 
 
 ```
-$ cd ~/Documents/FLSR_Group_GitHub/introduction_2_Git/```
+$ cd ~/PATH/TO/GIT/FOLDER/introduction_2_Git/
+$ git init
+```
+
+This will create a ./git subdirectory that holds important files regarding your repository.
+
+Now let's add some files to be tracked with our version control, and add a comment:
+
+```
+$ git add UsingGit.md
+$ git commit -m 'adding text'
+```
+
+
+
 
 
 
